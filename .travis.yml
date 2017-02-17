@@ -9,3 +9,4 @@ deploy:
   file: bin/jasmin.jar
   on:
     repo: hbirler/Jasmin
+
