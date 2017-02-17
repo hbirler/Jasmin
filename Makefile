@@ -6,6 +6,7 @@ TARGETDIR := "build"
 JARDIR := bin
 TARGET := $(TARGETDIR)/Main.class
 TARGETJAR := $(JARDIR)/jasmin.jar
+MANIFESTPATH := META-INF/MANIFEST.MF
 
 CFLAGS := -d $(TARGETDIR)
 
@@ -29,7 +30,7 @@ test:
 	@echo "TODO automated tests"
 
 $(TARGETJAR): $(JARDIR) build
-	jar cvfe $(TARGETJAR) jasmin.Main -C $(TARGETDIR) .
+	jar -cvfm $(TARGETJAR) $(MANIFESTPATH) -C $(TARGETDIR) .
 	
 build: $(TARGET) $(RESOURCESDST)
 
